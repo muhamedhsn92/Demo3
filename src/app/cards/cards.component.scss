@@ -1,0 +1,29 @@
+.container-fluid {
+  padding: 10px;
+  background: rgba(131, 131, 131, 0.349);
+}
+
+.card {
+  margin-top: 20px;
+  transition: .6s;
+//   border: 5px solid rgb(179, 245, 242);
+}
+
+.card:hover {
+  box-shadow: 5px 1px 10px rgb(179, 245, 242);
+  transform: scale(1.05);
+}
+.card a {
+    transition: .5s;
+}
+.card:hover a {
+    transform: translateX(10px);
+}
+
+.card img {
+  transition: .2s;
+}
+
+.card img:hover {
+  transform: scale(1.01)
+}

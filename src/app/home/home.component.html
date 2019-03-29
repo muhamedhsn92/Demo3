@@ -1,0 +1,37 @@
+   <div id="mainX" class="card card-body">
+     <h2 class="titleX">Add New Member yasta</h2>
+     <div class="d-flex mb-3 justify-content-between">
+
+       <!-- <input #newMember 
+       [(ngModel)]="newMemberX" 
+       (keyup.enter)="addMember(newMember.value)" 
+         class="col-sm-7 form-control" id="newMemberX" autofocus> -->
+       <input #newMember 
+       [(ngModel)]="newMemberX"
+       (keyup.enter)="addMember(newMember.value)" 
+         class="col-sm-7 form-control" autofocus>
+       <button class="col-sm-4 btn btn-dark" (click)="addMember(newMember.value)">Add Yasta</button>
+     </div>
+     <p>{{newMemberX}}</p>
+    
+    
+
+     <ul  class="list-group">
+      <li class="list-group-item" *ngFor="let item of items | async; let i = index">
+        <span *ngIf="(editId == i) && editMsg; then showEdit else showMsg"></span>
+        <ng-template #showMsg>{{ item.text }}</ng-template>
+        <ng-template #showEdit>
+          <input type="text" value="{{ item.text }}" #updateText
+            (keyup.enter)="updateItem(item.key, updateText.value)">
+        </ng-template>
+        <button class="deleteX btn btn-danger btn-sm float-right" 
+          (click)="deleteItem(item.key)">X</button>
+        <button class="editX btn btn-danger btn-sm float-right mr-2"
+          (click)="(editMsg = true) && (editId = i)">Edit</button>
+      </li>
+
+      <!-- <li class="list-group-item">Ahmed Samir -->
+        <!-- <button class="btn btn-danger btn-sm float-right deleteX">X</button> -->
+        <!-- <button class="btn btn-danger btn-sm float-right mr-2 editX">Edit</button> -->
+      <!-- </li> -->
+    </ul> 

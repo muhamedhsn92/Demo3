@@ -1,0 +1,13 @@
+
+
+<div class="row m-0"  >
+<!-- <div class="row m-0"  [dir]="status ? 'ltr' : 'rtl'"> -->
+    <div   [ngClass]="status ? 'col-md-1' : 'col-md-2'">
+    <button (click)="clickEvent()" class="btn btn-primary"><i class="fas fa-chech"> </i></button>
+<app-sidebar></app-sidebar>
+    </div>
+    <div   [ngClass]="status ? 'col-md-11' : 'col-md-10'">
+<router-outlet></router-outlet>
+
+    </div>
+</div>
